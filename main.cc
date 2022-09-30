@@ -1,5 +1,6 @@
 /**
  * Desarrollado por Harold Crow
+ * Septiembre 2022
  * */
 #include <iostream>
 #include <stdio.h>
