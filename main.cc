@@ -52,7 +52,7 @@ int main()
                 if (mainKeyPressed == ENTER)
                 {
                     screen.message((RIGHTLIMIT / 2) - 23, (BOTTOMLIMIT / 2), "                                                                         ");
-                    screen.message(4, 2, "white", "Points");
+                    screen.message(4, 2, "Points");
                     // screen.moveTo((RIGHTLIMIT / 2) - 23, (BOTTOMLIMIT / 2));
                     // printf("                                                                         ");
                     game.start();
@@ -106,7 +106,7 @@ int main()
                 if (game.isActive())
                 {
                     gameShip.renderLives();
-                    screen.message(11, 2, "yellow", std::to_string(game.getPoints()));
+                    screen.message(11, 2, std::to_string(game.getPoints()), "yellow");
                     for (itShoots = shoots.begin(); itShoots != shoots.end(); itShoots++)
                     {
                         (*itShoots)->move();
@@ -185,14 +185,14 @@ int main()
                         game.stop();
                         waitMessage = true;
                         screen.message((RIGHTLIMIT / 2) - 10, (BOTTOMLIMIT / 2), "                                             ");
-                        screen.message((RIGHTLIMIT / 2) - 8, (BOTTOMLIMIT / 2), "red", "G A M E   O V E R");
+                        screen.message((RIGHTLIMIT / 2) - 8, (BOTTOMLIMIT / 2), "G A M E   O V E R", "red");
                         // printf("G A M E   O V E R");
                         Sleep(2000);
                         screen.clearScreen();
                         gameShip.~Ship();
                         // delete gameShipPtr;
                     }
-                    Sleep(30);
+                    Sleep(50);
                 }
             } // end while game is active
         }     // endif kbhit()

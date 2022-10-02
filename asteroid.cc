@@ -33,7 +33,7 @@ void Asteroid::del()
 
 void Asteroid::render()
 {
-    Pos.message(*getPosX(), *getPosY(), "yellow", 220);
+    Pos.message(*getPosX(), *getPosY(), 220, "yellow");
 }
 
 void Asteroid::set()

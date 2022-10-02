@@ -18,10 +18,10 @@ public:
     void setPosX(const int);
     void setPosY(const int);
     void message(std::string);
-    void message(int, int, std::string);
-    void message(int, int, char);
-    void message(int, int, std::string color, char caracter);
-    void message(int, int, std::string color, std::string mensaje);
+    // void message(int, int, std::string);
+    //  void message(int, int, char);
+    void message(int, int, char caracter, std::string);
+    void message(int, int, std::string, std::string = "");
     const int *getPosX() const;
     const int *getPosY() const;
 };

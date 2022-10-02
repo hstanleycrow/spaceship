@@ -67,16 +67,16 @@ void Ship::setLives(const int lives)
 
 void Ship::render()
 {
-    Pos.message(*Pos.getPosX() + 2, *Pos.getPosY(), "light_blue", 30);
+    Pos.message(*Pos.getPosX() + 2, *Pos.getPosY(), 30, "light_blue");
 
-    Pos.message(*Pos.getPosX() + 1, *Pos.getPosY() + 1, "bright_white", 40);
-    Pos.message(*Pos.getPosX() + 2, *Pos.getPosY() + 1, "bright_white", 207);
-    Pos.message(*Pos.getPosX() + 3, *Pos.getPosY() + 1, "bright_white", 41);
+    Pos.message(*Pos.getPosX() + 1, *Pos.getPosY() + 1, 40, "bright_white");
+    Pos.message(*Pos.getPosX() + 2, *Pos.getPosY() + 1, 207, "bright_white");
+    Pos.message(*Pos.getPosX() + 3, *Pos.getPosY() + 1, 41, "bright_white");
 
-    Pos.message(*Pos.getPosX(), *Pos.getPosY() + 2, "light_blue", 30);
-    Pos.message(*Pos.getPosX() + 1, *Pos.getPosY() + 2, "grey", 190);
-    Pos.message(*Pos.getPosX() + 3, *Pos.getPosY() + 2, "grey", 190);
-    Pos.message(*Pos.getPosX() + 4, *Pos.getPosY() + 2, "light_blue", 30);
+    Pos.message(*Pos.getPosX(), *Pos.getPosY() + 2, 30, "light_blue");
+    Pos.message(*Pos.getPosX() + 1, *Pos.getPosY() + 2, 190, "grey");
+    Pos.message(*Pos.getPosX() + 3, *Pos.getPosY() + 2, 190, "grey");
+    Pos.message(*Pos.getPosX() + 4, *Pos.getPosY() + 2, 30, "light_blue");
 }
 
 void Ship::clear()
@@ -97,11 +97,12 @@ void Ship::move(char keyPressed)
         Pos.setPosY(*Pos.getPosY() - speedY);
     if (keyPressed == KEYDOWN && *Pos.getPosY() < (BOTTOMLIMIT - SHIPHEIGHT))
         Pos.setPosY(*Pos.getPosY() + speedY);
-    if (keyPressed == 'e')
+    /* if (keyPressed == 'e')
     {
         restHearts();
         shipDies();
     }
+    */
     render();
 }
 
@@ -120,7 +121,7 @@ void Ship::move()
             Pos.setPosY(*Pos.getPosY() - speedY);
         if (keyPressed == KEYDOWN && *Pos.getPosY() < (BOTTOMLIMIT - SHIPHEIGHT))
             Pos.setPosY(*Pos.getPosY() + speedY);
-        if (keyPressed == 'e')
+        /*if (keyPressed == 'e')
         {
             restHearts();
             shipDies();
@@ -129,7 +130,7 @@ void Ship::move()
             getch();
             Pos.moveTo(20, 2);
             std::cout << "             ";
-        }
+        }*/
         render();
         renderLives();
     }
@@ -142,11 +143,11 @@ void Ship::delLives()
 
 void Ship::renderLives()
 {
-    Pos.message(60, 2, "white", "Lives ");
+    Pos.message(60, 2, "Lives ");
     delLives();
     for (int i = 0; i < lives; i++)
     {
-        Pos.message(66 + i, 2, "green", 199);
+        Pos.message(66 + i, 2, 199, "green");
     }
 }
 
@@ -157,11 +158,11 @@ void Ship::delHeart()
 
 void Ship::renderHearts()
 {
-    Pos.message(92, 2, "white", "Health");
+    Pos.message(92, 2, "Health");
     delHeart();
     for (int i = 0; i < remainingHearts; i++)
     {
-        Pos.message(100 + i, 2, "red", 3);
+        Pos.message(100 + i, 2, 3, "red");
     }
 }
 
@@ -175,15 +176,15 @@ void Ship::shipDies()
     clear();
     for (int i = 0; i < 2; i++)
     {
-        Pos.message(*Pos.getPosX(), *Pos.getPosY(), "white", "   **   ");
-        Pos.message(*Pos.getPosX(), *Pos.getPosY() + 1, "red", "  ****  ");
-        Pos.message(*Pos.getPosX(), *Pos.getPosY() + 2, "yellow", "   **   ");
+        Pos.message(*Pos.getPosX(), *Pos.getPosY(), "   **   ", "white");
+        Pos.message(*Pos.getPosX(), *Pos.getPosY() + 1, "  ****  ", "red");
+        Pos.message(*Pos.getPosX(), *Pos.getPosY() + 2, "   **   ", "yellow");
         Sleep(200);
         clear();
 
-        Pos.message(*Pos.getPosX(), *Pos.getPosY(), "red", " * ** *");
-        Pos.message(*Pos.getPosX(), *Pos.getPosY() + 1, "yellow", "  **** ");
-        Pos.message(*Pos.getPosX(), *Pos.getPosY() + 2, "white", " * ** *");
+        Pos.message(*Pos.getPosX(), *Pos.getPosY(), " * ** *", "red");
+        Pos.message(*Pos.getPosX(), *Pos.getPosY() + 1, "  **** ", "yellow");
+        Pos.message(*Pos.getPosX(), *Pos.getPosY() + 2, " * ** *", "white");
         Sleep(200);
         clear();
     };

@@ -29,25 +29,29 @@ void Screen::message(std::string mensaje)
     std::cout << "                                                                ";
 }
 
-void Screen::message(int posX, int posY, std::string mensaje)
+/*void Screen::message(int posX, int posY, std::string mensaje)
 {
     moveTo(posX, posY);
-    std::cout << dye::green(mensaje);
-}
-void Screen::message(int posX, int posY, char caracter)
+    std::cout << dye::colorize(mensaje, "white");
+}*/
+/*void Screen::message(int posX, int posY, char caracter)
 {
     moveTo(posX, posY);
     std::cout << caracter;
-}
+}*/
 
-void Screen::message(int posX, int posY, std::string color, char caracter)
+void Screen::message(int posX, int posY, char caracter, std::string color)
 {
+    if (color.empty())
+        color = "white";
     moveTo(posX, posY);
     std::cout << dye::colorize((char)caracter, color);
 }
 
-void Screen::message(int posX, int posY, std::string color, std::string mensaje)
+void Screen::message(int posX, int posY, std::string mensaje, std::string color)
 {
+    if (color.empty())
+        color = "white";
     moveTo(posX, posY);
     std::cout << dye::colorize(mensaje, color);
 }

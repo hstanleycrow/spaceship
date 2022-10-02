@@ -36,7 +36,7 @@ void Shoot::move()
     {
         Pos.setPosY(*getPosY() - 1);
     }
-    Pos.message(*getPosX(), *getPosY(), "bright_white", 248);
+    Pos.message(*getPosX(), *getPosY(), 248, "bright_white");
 }
 
 bool Shoot::outLimits()
