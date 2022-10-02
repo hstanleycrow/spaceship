@@ -1,6 +1,0 @@
-Objeto PANTALLA
-
-
-Objeto NAVE
-Su responsabilidad es destruir los objetos ASTEROIDE usando objetos DISPARO los cuales son llamados cuando el jugador lo solicita utilizando la tecla SPACE del teclado.
-La NAVE se puede mover de izquierda a derecha y arriba abajo a solicitud del jugador utilizando las teclas cursoras del teclado
